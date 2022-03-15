@@ -476,25 +476,25 @@ b {
 .slide.gbc {
   z-index: 5;
   background-color: red;
-  background-image: url(/../../images/slide/1280x430-gbc.jpg);
+  background-image: url(../images/slide/1280x430-gbc.jpg);
 }
 
 .slide.block {
   z-index: 2;
   background-color: green;
-  background-image: url(/../../images/slide/1280x430-blok.jpg);
+  background-image: url(../images/slide/1280x430-blok.jpg);
 }
 
 .slide.val {
   z-index: 3;
   background-color: blue;
-  background-image: url(/../../images/slide/1280x430-val.jpg);
+  background-image: url(../images/slide/1280x430-val.jpg);
 }
 
 .slide.proverka {
   z-index: 4;
   background-color: purple;
-  background-image: url(/../../images/slide/1280x430-proverka.jpg);
+  background-image: url(../images/slide/1280x430-proverka.jpg);
 }
 
 .slide_active {
