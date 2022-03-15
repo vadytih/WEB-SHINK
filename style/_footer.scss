@@ -1,0 +1,16 @@
+.footer {
+    width: 100%;
+    background-color: $background-base;
+    border-top: solid 3px $accent-base;
+
+    &_wrapp {
+        height: 130px;
+
+        // max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction:column;
+        padding: 0px 10px 5px;
+    }
+}

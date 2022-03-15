@@ -1,0 +1,866 @@
+@charset "UTF-8";
+/***
+    The new CSS reset - version 1.4.9 (last updated 11.2.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::-webkit-input-placeholder {
+  all: unset;
+}
+:-ms-input-placeholder {
+  all: unset;
+}
+::-ms-input-placeholder {
+  all: unset;
+}
+::placeholder {
+  all: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #150804;
+}
+
+body {
+  min-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.footer {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+b {
+  font-weight: 600;
+}
+
+.heading {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.wrapper {
+  max-width: 1300px;
+}
+
+.js-open-modal {
+  cursor: pointer;
+}
+
+.header {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.header_wrapp {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0px 10px 5px;
+}
+
+.header_banner {
+  text-align: center;
+  background-color: #E7562A;
+}
+
+.header_banner span {
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.header_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 5px;
+}
+
+.header_info__box {
+  padding-right: 15px;
+}
+
+.header_location {
+  width: 170px !important;
+  padding: 0 10px;
+  border: 2px solid #ff6232;
+  border-radius: 10px;
+}
+
+.header_location span {
+  width: 100%;
+}
+
+.header_location span::after {
+  content: "Минск, Кнорина 50";
+}
+
+.header_location:hover {
+  font-weight: 700;
+  background-color: #ff6232;
+  color: #ffffff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  border: 2px solid #ff6232;
+  width: inherit;
+}
+
+.header_location:hover span::after {
+  content: "показать на карте";
+}
+
+.header_phone {
+  height: inherit;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+}
+
+.header_phone__icon {
+  height: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header_phone__icon img {
+  height: 20px;
+}
+
+.header_box {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  vertical-align: bottom;
+  text-align: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.header_logo {
+  height: 60px;
+}
+
+.header_logo span {
+  font-size: 40px;
+}
+
+.header_nav {
+  padding-bottom: 8px;
+  vertical-align: bottom;
+  font-size: larger;
+  font-weight: 500;
+}
+
+.header_nav__link {
+  padding-left: 25px;
+  font-weight: 700;
+}
+
+.header_nav__link a {
+  color: #E7562A;
+  text-decoration: none;
+  font-size: 1em;
+  position: relative;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.header_nav__link a:before {
+  content: "";
+  width: 0;
+  height: 0.1em;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background: #ff6232;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header_nav__link a:hover:before {
+  width: 100%;
+  left: 0;
+  background: #ff6232;
+}
+
+.header_nav__link a:active {
+  color: #c44924;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.header_nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-transform: uppercase;
+}
+
+.header_service {
+  width: 100%;
+}
+
+.header_service__nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.header_service__link {
+  padding-right: 20px;
+  text-transform: uppercase;
+  color: #150804;
+}
+
+.header_service__link a {
+  border-radius: 3px;
+  padding: 0 5px;
+  -webkit-transition: background 0.2s ease;
+  transition: background 0.2s ease;
+}
+
+.header_service__link a:hover {
+  background-color: #E7562A;
+  color: #ffffff;
+  -webkit-transition: background 0.2s ease;
+  transition: background 0.2s ease;
+}
+
+.header_service__link a:active {
+  background-color: #c44924;
+  color: #ffffff;
+  -webkit-transition: background 0.1s ease;
+  transition: background 0.1s ease;
+}
+
+.slider {
+  width: 100%;
+  height: 430px;
+  background-color: #999999;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.slide_content {
+  width: inherit;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.55);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  vertical-align: bottom;
+}
+
+.slide_content h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 500;
+  color: white;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.slide_content_service {
+  color: #999999;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 12px;
+  padding-bottom: 20px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.slide_content_service ul {
+  padding-bottom: 20px;
+}
+
+.slide_content_service_style {
+  display: block;
+  margin: 20px 10px 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  line-height: 22px;
+  font-size: 13px;
+  color: #dddddd;
+  font-weight: 700;
+  padding-bottom: 10px !important;
+}
+
+.slide_content_service_style li {
+  padding-left: 15px;
+}
+
+.slide_content_service_heading {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.slide.gbc {
+  z-index: 5;
+  background-color: red;
+  background-image: url(/images/slide/1280x430-gbc.jpg);
+}
+
+.slide.block {
+  z-index: 2;
+  background-color: green;
+  background-image: url(/images/slide/1280x430-blok.jpg);
+}
+
+.slide.val {
+  z-index: 3;
+  background-color: blue;
+  background-image: url(/images/slide/1280x430-val.jpg);
+}
+
+.slide.proverka {
+  z-index: 4;
+  background-color: purple;
+  background-image: url(/images/slide/1280x430-proverka.jpg);
+}
+
+.slide_active {
+  z-index: 900 !important;
+}
+
+.general {
+  width: 100%;
+}
+
+.general_about-us {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.general_about-us h1 {
+  color: #ff6232;
+  font-size: 35px;
+  text-align: center;
+}
+
+.general_about-us p {
+  font-size: 20px;
+}
+
+.general_how-we-work {
+  padding-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 40px;
+}
+
+.general_how-we-work_box1 {
+  font-size: 20px;
+  min-width: 400px;
+  max-width: 50%;
+}
+
+.general_how-we-work_box1 h3 {
+  color: #ff6232;
+  font-size: 35px;
+  text-align: left;
+}
+
+.general_how-we-work_box1 ol {
+  counter-reset: num;
+  margin: 0 0 0 45px;
+  padding: 15px 0 5px 0;
+}
+
+.general_how-we-work_box1 ol li {
+  position: relative;
+  margin: 0 0 0 0;
+  padding: 10px 0 10px 0;
+  line-height: 1.4;
+}
+
+.general_how-we-work_box1 ol li:before {
+  content: counter(num);
+  counter-increment: num;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: -38px;
+  width: 28px;
+  height: 28px;
+  color: #E7562A;
+  text-align: center;
+  line-height: 65px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.general_how-we-work_box2 {
+  min-width: 400px;
+  max-width: 50%;
+}
+
+.general_how-we-work_box2 img {
+  width: 100%;
+}
+
+.main_wrapp {
+  height: 100%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 0px 10px 5px;
+}
+
+.contact-in {
+  background-color: #dddddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.contact-in_main-info {
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-in_main-info_phone {
+  padding: 0;
+  font-size: 40px;
+}
+
+.contact-in_main-info_location {
+  font-size: 25px;
+  text-align: center;
+}
+
+.contact-in_main-button {
+  min-height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: inherit;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.contact-in_main-button_to-write, .contact-in_main-button_to-call, .contact-in_main-button_to-map {
+  padding-top: 3%;
+  text-align: center;
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-in_main-button_to-write span, .contact-in_main-button_to-call span, .contact-in_main-button_to-map span {
+  padding: 0;
+  font-size: 25px;
+}
+
+.contact-in_main-button_to-write {
+  background-color: blueviolet;
+  -webkit-box-flex: 6;
+      -ms-flex-positive: 6;
+          flex-grow: 6;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.contact-in_main-button_to-call {
+  background-color: cadetblue;
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.contact-in_main-button_to-map {
+  background-color: goldenrod;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.contact-in_main-button_to-write:hover, .contact-in_main-button_to-call:hover, .contact-in_main-button_to-map:hover {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-flex: 10;
+      -ms-flex-positive: 10;
+          flex-grow: 10;
+}
+
+.contact-in_main-button_to-write:hover span, .contact-in_main-button_to-call:hover span, .contact-in_main-button_to-map:hover span {
+  font-size: 30px;
+}
+
+.contact-in_modal {
+  background-color: #ffffff;
+}
+
+.footer {
+  width: 100%;
+  background-color: #ffffff;
+  border-top: solid 3px #E7562A;
+}
+
+.footer_wrapp {
+  height: 130px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0px 10px 5px;
+}
+
+.modal {
+  /* Скрываем окна  */
+  opacity: 0;
+  visibility: hidden;
+  /*  Установаем ширину окна  */
+  width: 300px;
+  height: 300px;
+  /*  Центрируем и задаем z-index */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 30;
+  /* Должен быть выше чем у подложки*/
+  /*  Побочные стили   */
+  -webkit-box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding-top: 50px;
+  border-radius: 10px;
+  background-color: #fff;
+  /* Стили для кнопки закрытия */
+}
+
+.modal__cross {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  fill: #c92626;
+  cursor: pointer;
+}
+
+.modal_to-write_heading, .modal_to-call_heading, .modal_to-map_heading {
+  color: #c44924;
+  line-height: 50px;
+  text-shadow: none;
+}
+
+.modal_to-write ul li, .modal_to-call ul li, .modal_to-map ul li {
+  padding: 0 10px;
+}
+
+.modal_to-write ul li a, .modal_to-call ul li a, .modal_to-map ul li a {
+  padding: 9px 10px;
+  cursor: pointer;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 15px;
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 10px -0.5px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 4px 10px -0.5px rgba(0, 0, 0, 0.7);
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  vertical-align: middle;
+}
+
+.modal_to-write ul li a span, .modal_to-call ul li a span, .modal_to-map ul li a span {
+  padding-left: 10px;
+  font-size: 30px;
+}
+
+.modal_to-write ul li a:hover, .modal_to-call ul li a:hover, .modal_to-map ul li a:hover {
+  -webkit-box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.4);
+}
+
+.modal_to-write ul li a:active, .modal_to-call ul li a:active, .modal_to-map ul li a:active {
+  -webkit-box-shadow: 0 2px 10px -0.5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 10px -0.5px rgba(0, 0, 0, 0.2);
+}
+
+.modal_to-call_phone_text {
+  padding-left: 10px;
+  font-size: 15px !important;
+}
+
+.modal_to-call_phone_text span {
+  font-size: 12px !important;
+  color: #999999;
+}
+
+.modal_icon {
+  width: 40px;
+  height: 40px;
+}
+
+.modal_icon img {
+  height: inherit;
+  border-radius: 30px;
+}
+
+/* Стили для активных классов подложки и окна */
+.modal.active,
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay {
+  /* Скрываем подложку  */
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+/* Стили для модальных окон */
+/*# sourceMappingURL=style.css.map */

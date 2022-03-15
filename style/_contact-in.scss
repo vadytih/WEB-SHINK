@@ -1,0 +1,101 @@
+.contact-in {
+    background-color: $primary-base;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    
+
+    &_main-info {
+        // min-width: 460px;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // flex-grow: 3;
+
+        
+        &_phone {
+            padding: 0;
+            font-size: 40px;
+        }
+
+        &_location {
+            font-size: 25px;
+            // color: $text-dark;
+            text-align: center;
+        }
+    }
+
+    &_main-button {
+        // background-color: aqua;
+        min-height: 100px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: inherit;
+        // width: 510px;
+
+        flex-grow: 1;
+        
+        &_to-write,
+        &_to-call,
+        &_to-map {
+            padding-top: 3%;
+            text-align: center;
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            // opacity: 1;
+            & span {
+                padding: 0;
+                font-size: 25px;
+            }
+
+        }
+
+        &_to-write {
+            background-color: blueviolet;
+            // width: 33%;
+            flex-grow: 6;
+            transition: all 0.2s;
+
+        }
+
+        &_to-call {
+            background-color: cadetblue;
+            // width: 33%;
+            flex-grow: 3;
+            transition: all 0.2s;
+        }
+
+        &_to-map {
+            background-color: goldenrod;
+            // width: 33%;
+            flex-grow: 2;
+            transition: all 0.2s;
+        }
+
+        &_to-write:hover,
+        &_to-call:hover,
+        &_to-map:hover {
+            // opacity: 0.5;
+            transition: all 0.2s;
+            flex-grow: 10;
+
+            & span {
+                font-size: 30px;
+            }
+        }
+    }
+
+    &_modal {
+        background-color:  $primari-light;
+
+    }
+
+}

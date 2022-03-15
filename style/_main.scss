@@ -1,0 +1,13 @@
+@import '../style/slider';
+@import '../style/general';
+
+.main{
+    
+    &_wrapp {
+        height: 100%;
+        // max-width: 1300px;
+        margin: 0 auto;
+        background-color: $background-base;
+        padding: 0px 10px 5px;
+    }
+}
