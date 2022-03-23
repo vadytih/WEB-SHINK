@@ -8,8 +8,10 @@ body, html {
     // background-color: lightgray;
     // background-color: $primari-light;
 }
+
+
 body {
-    min-width: 500px;
+    min-width: 320px;
     display: flex;
     flex-direction: column;
 }

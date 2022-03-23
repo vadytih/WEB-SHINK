@@ -49,7 +49,7 @@ Temporary Items
 # Ignore all local history of files
 .history
 .ionide
-.gitignore
+# .gitignore
 
 # Support for Project snippet scope
 
